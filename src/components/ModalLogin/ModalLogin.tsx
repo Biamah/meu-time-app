@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
 import './ModalLogin.scss'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {}
 
@@ -13,6 +14,7 @@ export const ModalLogin:FC<IProps> = (props) => {
   const placeholder = 'Informe a KEY da API';
   const [isKeyValid, setIsKeyValid] = useState(false)
   const [key, setKey] = useState('')
+  const navigate = useNavigate();
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -20,12 +22,13 @@ export const ModalLogin:FC<IProps> = (props) => {
     try {
       const response = await axios.get(`http://localhost:8000/api/endpoint?api_key=${key}`)
 
-      if(response.status === 200) {
-        setIsKeyValid(true)
-        console.log('a chave informada está correta', response)
+      if (response.status === 200) {
+        setIsKeyValid(true);
+        console.log('A chave informada está correta', response);
+        navigate('/dashboard');
       } else {
-        setIsKeyValid(false)
-        console.log('a chave está incorreta')
+        setIsKeyValid(false);
+        console.log('A chave está incorreta');
       }
     } catch(error) {
       setIsKeyValid(false)

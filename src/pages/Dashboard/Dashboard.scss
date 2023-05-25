@@ -1,0 +1,41 @@
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../../assets/background.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  &__modal {
+    position: relative;
+    width: 70%;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form {
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+
+    &__input {
+      width: auto;
+
+      option {
+        color: #000;
+      }
+    }
+  }
+}

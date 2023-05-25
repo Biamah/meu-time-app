@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import "./Header.scss";
 import githubLogo from '../../assets/github.svg';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface IProps {}
 
@@ -11,6 +12,8 @@ interface IProps {}
 
 export const Header: FC<IProps> = (props) => {
   const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setIsActive(!isActive);
   };
@@ -21,7 +24,7 @@ export const Header: FC<IProps> = (props) => {
       </a>
 
       <nav className="header__navigation">
-        <a href="#">Home</a>
+        <Link to="/">Home</Link>
       </nav>
     </header>
   );
