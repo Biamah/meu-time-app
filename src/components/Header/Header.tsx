@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import "./Header.scss";
+import githubLogo from '../../assets/github.svg';
 
 interface IProps {}
 
@@ -15,7 +16,9 @@ export const Header: FC<IProps> = (props) => {
   };
   return (
     <header className="header">
-      <h2 className="header__logo">Logo</h2>
+      <a href="https://github.com/Biamah" className="header__logo">
+        <img src={githubLogo} alt="Github Logo" />
+      </a>
 
       <nav className="header__navigation">
         <a href="#">Home</a>

@@ -10,9 +10,16 @@
   z-index: 99;
 
   &__logo {
-    font-size: 2rem;
     color: #fff;
+    font-size: 2rem;
+    height: auto;
     user-select: none;
+    width: 60px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__navigation a {

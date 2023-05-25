@@ -14,7 +14,6 @@ export const Home:FC<IProps> = (props) => {
   return (
     <div className='home'>
         <Header />
-
         <ModalLogin />
     </div>
    )
